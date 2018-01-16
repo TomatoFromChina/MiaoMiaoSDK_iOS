@@ -6,23 +6,23 @@ Meow component SDK base library, currently only supports manual integration. iOS
 
 ## depend on  library
 ```
-libsqlite.tbd  数据缓存
-CoreBluetooth  蓝牙核心库
+libsqlite.tbd
+CoreBluetooth
 ```
-## integrated
+## Integrated
 - Extract the .zip file to get the FQFrameWork component
 - Xcode File -> ** Add Files to ** "Your project", in the pop-up Panel selected extract the package -> Add . (Note: selected Copy items if needed )
 - Add dependent libraries, set the target -> tab in the project General -> Linked Frameworks and Libraries as
 follows:
 
-![导入番茄framwork](https://static.oschina.net/uploads/img/201711/02175110_FK4p.png "add Libraries")
+![Import framwork](https://static.oschina.net/uploads/img/201711/02175110_FK4p.png "add Libraries")
 
 - Project using Bluetooth background mode Xcode TARGETS -> ** Capabilties ** -> Background Modes open. as
 follows:：
 
-![开启蓝牙后台](https://static.oschina.net/uploads/img/201711/03144056_WRpF.png "Background Modes")
+![Open BlueTooth Background](https://static.oschina.net/uploads/img/201711/03144056_WRpF.png "Background Modes")
 
-## SDK initialization
+## SDK Initialization
 Here is a list of text in a AppDelegate.m introducing header file associated components and under  ```application:didFinishLaunchingWithOptions:``` add the following code in the method:
 ```
 #import <FQFrameWork/FQApi.h>
@@ -36,10 +36,11 @@ The following methods are implemented in AppDelegate.m
 /**
 搜索到蓝牙(喵喵)设备后触发
 @param peripheral 喵喵硬件
-@param centralManager 蓝牙centralManager(升级用)
+@param centralManager 蓝牙centralManager(for firmware upload)
 @param RSSI 信号强度
 @param firmVersion 固件版本号
 @param MAC 喵喵MAC地址
+
 */
 - (void)fqFoundPeripheral:(CBPeripheral *)peripheral
 centralManager:(CBCentralManager *)centralManager
@@ -51,6 +52,7 @@ if ([peripheral.name  isEqualToString:@"miaomiaoA"]) {
 /*
 接厂商SDK升级
 */
+
 NSLog(@"喵喵蓝牙为BootLoader模式，需强制用户升级");
 return;
 }
@@ -62,7 +64,7 @@ return;
 @param peripheral 连接中的蓝牙设备
 @param centralManager 蓝牙centralManager
 @param updateDict 升级相关信息
-需更新时 updateDict 包含3对key:value
+需更新时 updateDict 包含3对(key:value)
 例如：
 currentFirmNumber：当前固件版本
 latestFirmNumber：最新固件版本
@@ -77,18 +79,18 @@ latestFirmNumber = 53;
 - (void)fqConnectSuccess:(CBPeripheral *)peripheral
 centralManager:(CBCentralManager *)centralManager
 updateDict:(NSDictionary *)updateDict {
-NSLog(@"连接成功");
+NSLog(@"connectSuccess");
 }
 - (void)fqConnectFailed {
-NSLog(@"连接失败");
+NSLog(@"connectFailed");
 }
 - (void)fqDisConnected {
-NSLog(@"连接断开");
+NSLog(@"disConnected");
 }
 
 #pragma 番茄SDK 数据回调
 - (void)fqResp:(FQBaseResp*)resp{
-NSLog(@"返回数据");
+NSLog(@"getData");
 }
 ```
 Start searching for Bluetooth devices
@@ -114,9 +116,9 @@ Disconnect peripherals based on MAC address
 For example:
 ```
 {
-currentFirmNumber = 51;//当前固件版本
-latestFirmNumber = 53; //最新固件版本
-firmDowloadUrl = "http://dl.fanqies.com/app/06a10a63-c4d4-4ae3-a8a7-cd897df84975.zip";//固件下载地址
+currentFirmNumber = 51;//Current Firmware Version Number
+latestFirmNumber = 53; //Latest Firmware Version Number
+firmDowloadUrl = "http://dl.fanqies.com/app/06a10a63-c4d4-4ae3-a8a7-cd897df84975.zip";//Latest Firmware Download Url
 }
 ```
 without upgrade updateDict == nil
