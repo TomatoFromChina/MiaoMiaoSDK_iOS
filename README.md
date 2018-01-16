@@ -1,8 +1,8 @@
 # MiaoMiaoSDK_iOS
-Meow reader iOS access demo and SDK
+Miaomiao reader iOS access demo and SDK
 
 ## Introduction
-Meow component SDK base library, currently only supports manual integration. iOS Support Version: 8.0+
+Miaomiao component SDK base library, currently only supports manual integration. iOS Support Version: 8.0+
 
 ## depend on  library
 ```
@@ -10,7 +10,7 @@ libsqlite.tbd
 CoreBluetooth
 ```
 ## Integrated
-- An official application is required for certification ,you will get your appId & your secret
+- An official application is required for certification ,you will get your appId & your secret[mail to:support@fanqies.com]
 - Extract the .zip file to get the FQFrameWork component
 - Xcode File -> ** Add Files to ** "Your project", in the pop-up Panel selected extract the package -> Add . (Note: selected Copy items if needed )
 - Add dependent libraries, set the target -> tab in the project General -> Linked Frameworks and Libraries as
@@ -40,7 +40,7 @@ The following methods are implemented in AppDelegate.m
 @param centralManager 蓝牙centralManager(for firmware upload)
 @param RSSI 信号强度
 @param firmVersion 固件版本号
-@param MAC 喵喵MAC地址
+@param MAC 喵喵MAC地址  miaomiao MAC
 
 */
 - (void)fqFoundPeripheral:(CBPeripheral *)peripheral
