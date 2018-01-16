@@ -124,5 +124,5 @@ CoreBluetooth  蓝牙核心库
 
 
 ## 技术支持
-https://gitter.im/miaomiaoSDK/Lobby
-有问题请尽快与番茄开发团队联系，请提供您的appkey及console中的详细出错日志，您所提供的内容越详细越有助于我们帮您解决问题
+请在Gitter聊天室留言：https://gitter.im/miaomiaoSDK/Lobby
+有问题请尽快与番茄开发团队联系，请提供您的appkey及console中的详细出错日志，您所提供的内容越详细越有助于我们帮您解决问题！
