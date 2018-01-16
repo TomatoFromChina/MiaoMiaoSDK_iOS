@@ -1,12 +1,9 @@
 # MiaoMiaoSDK_iOS
 喵喵读取器iOS接入demo及SDK
-MiaoMiao Demo&SDK for iOS Apps
 
-##简介/Brief##
+##简介/Brief
 喵喵组件SDK的基础库，当前只支持手动集成。
-The base library of the Miaomiao component SDK is currently only supported by manual integration.
 iOS支持版本：8.0+
-iOS version: 8.0+ 
 
 ##依赖库/Dependency Library##
 ```
