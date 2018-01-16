@@ -1,16 +1,16 @@
 # MiaoMiaoSDK_iOS
 喵喵读取器iOS接入demo及SDK
 
-##简介/Brief
+## 简介
 喵喵组件SDK的基础库，当前只支持手动集成。
 iOS支持版本：8.0+
 
-##依赖库/Dependency Library##
+## 依赖库
 ```
 libsqlite.tbd  数据缓存
 CoreBluetooth  蓝牙核心库
 ```
-##集成/Integrate##
+## 集成
 - 解压.zip文件得到FQFrameWork组件
 - Xcode **File** —> **Add Files to **"Your project" ，在弹出Panel选中解压的组件包－> **Add**。（注：选中 **Copy items if needed**）
 - 添加依赖库，在项目设置**target** -> 选项卡 **General**-> **Linked Frameworks and Libraries**
@@ -23,7 +23,7 @@ CoreBluetooth  蓝牙核心库
 
 ![开启蓝牙后台](https://static.oschina.net/uploads/img/201711/03144056_WRpF.png "Background Modes")
 
-##SDK初始化/SDK Initialization##
+## SDK初始化
 这里是列表文本在工程的 **AppDelegate.m** 文件中引入相关组件头文件 ，且在 ```application:didFinishLaunchingWithOptions:``` 方法中添加如下代码：
 ```
 #import <FQFrameWork/FQApi.h>
@@ -104,7 +104,7 @@ CoreBluetooth  蓝牙核心库
 ```
 +(void)cancelConnectWithMAC:(NSString *)MAC;
 ```
-##注意事项##
+## 注意事项
 1. APP在开发过程中需先调用```+(void)startScaning```获取**MAC**地址，后用```+(void)connectWithMAC:(NSString *)MAC``` 连接。之后可通过**MAC**地址直接连接。
 2. SDK封装了蓝牙重连机制，蓝牙因断电，信号强度等原因断开后会自动重连，相应状态也会在APPDelegate中回调。
 3. 所有业务数据通过```- (void)fqResp:(BaseResp*)resp``` 返回，其中当 ```FQRespType type == FQReceived```时返回有效的业务数据。数据格式及详细字段参见```FQApiObject.h```。
@@ -123,8 +123,6 @@ CoreBluetooth  蓝牙核心库
  无需升级时 updateDict == nil
 
 
-
-##技术支持##
-联系技术：**jeff 柳声
-Email：xuliusheng@fanqies.com
+## 技术支持
+https://gitter.im/miaomiaoSDK/Lobby
 有问题请尽快与番茄开发团队联系，请提供您的appkey及console中的详细出错日志，您所提供的内容越详细越有助于我们帮您解决问题
