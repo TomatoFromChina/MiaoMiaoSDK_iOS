@@ -1,17 +1,20 @@
 # MiaoMiaoSDK_iOS
 喵喵读取器iOS接入demo及SDK
+MiaoMiao Demo&SDK for iOS Apps
 
-##简介##
-番茄喵喵组件SDKs的基础库，当前只支持手动集成。
-支持版本：8.0+
+##简介/Brief##
+喵喵组件SDK的基础库，当前只支持手动集成。
+The base library of the Miaomiao component SDK is currently only supported by manual integration.
+iOS支持版本：8.0+
+iOS version: 8.0+ 
 
-##依赖库##
+##依赖库/Dependency Library##
 ```
 libsqlite.tbd  数据缓存
 CoreBluetooth  蓝牙核心库
 ```
-##集成##
-- 解压.zip文件得到FQFrameWork组件。
+##集成/Integrate##
+- 解压.zip文件得到FQFrameWork组件
 - Xcode **File** —> **Add Files to **"Your project" ，在弹出Panel选中解压的组件包－> **Add**。（注：选中 **Copy items if needed**）
 - 添加依赖库，在项目设置**target** -> 选项卡 **General**-> **Linked Frameworks and Libraries**
  如下：
@@ -23,7 +26,7 @@ CoreBluetooth  蓝牙核心库
 
 ![开启蓝牙后台](https://static.oschina.net/uploads/img/201711/03144056_WRpF.png "Background Modes")
 
-##SDK初始化##
+##SDK初始化/SDK Initialization##
 这里是列表文本在工程的 **AppDelegate.m** 文件中引入相关组件头文件 ，且在 ```application:didFinishLaunchingWithOptions:``` 方法中添加如下代码：
 ```
 #import <FQFrameWork/FQApi.h>
