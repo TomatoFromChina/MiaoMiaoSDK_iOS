@@ -4,7 +4,7 @@ Miaomiao reader iOS access demo and SDK
 ## Introduction
 Miaomiao component SDK base library, currently only supports manual integration. iOS Support Version: 8.0+
 
-## depend on  library
+## Library
 ```
 libsqlite.tbd
 CoreBluetooth
