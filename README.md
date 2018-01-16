@@ -10,6 +10,7 @@ libsqlite.tbd
 CoreBluetooth
 ```
 ## Integrated
+- An official application is required for certification ,you will get your appId & your secret
 - Extract the .zip file to get the FQFrameWork component
 - Xcode File -> ** Add Files to ** "Your project", in the pop-up Panel selected extract the package -> Add . (Note: selected Copy items if needed )
 - Add dependent libraries, set the target -> tab in the project General -> Linked Frameworks and Libraries as
